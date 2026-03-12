@@ -23,10 +23,10 @@ if ($isLocalhost) {
     $domain = "http://localhost/fchain/";
 } else {
     // Live
-    define("USER", "boostkor_db");
-    define("PASSWORD", "boostkor_db");
-    define("DATABASE", "boostkor_db");
-    $domain = "https://boostkore.com/";
+    define("USER", "spotweb1_fchain");
+    define("PASSWORD", "spotweb1_fchain");
+    define("DATABASE", "spotweb1_fchain");
+    $domain = "https://spotwebtech.com.ng/metastake/";
 }
 
 // Object-oriented mysqli connection

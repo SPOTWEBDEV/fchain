@@ -13,7 +13,7 @@ include("./server/connection.php");
     
     <script src="https://cdn.tailwindcss.com/"></script>
     
-    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="<?php echo $domain; ?>assets/vendor/cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 
@@ -152,7 +152,7 @@ include("./server/connection.php");
             </p>
             
             <div class="flex justify-center w-full">
-                <a href="auth/login.html" class="w-full md:w-auto bg-brand-primary hover:bg-brand-accent text-white px-10 py-4 rounded-xl font-bold text-lg shadow-neon transition-all hover:scale-[1.02] active:scale-95">
+                <a href="auth/login" class="w-full md:w-auto bg-brand-primary hover:bg-brand-accent text-white px-10 py-4 rounded-xl font-bold text-lg shadow-neon transition-all hover:scale-[1.02] active:scale-95">
                     Explore Dashboard
                 </a>
             </div>

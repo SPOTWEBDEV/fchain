@@ -4,6 +4,13 @@ include("../../server/auth/client.php");
 include("../includes/modal.php");
 
 
+
+// Fetch user's wallet
+$userQuery = mysqli_query($connection, "SELECT wallet FROM users WHERE id='$id' LIMIT 1");
+$userData = mysqli_fetch_assoc($userQuery);
+$wallets = json_decode($userData['wallet'], true); // e.g. ["btc"=>110,"eth"=>20,"sol"=>50]
+
+
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +19,7 @@ include("../includes/modal.php");
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><?php  echo $sitename ?> Dashboard</title>
+    <title><?php echo $sitename ?> Dashboard</title>
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -103,8 +110,24 @@ include("../includes/modal.php");
                         <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-8 shadow-lg">
                             <p class="text-gray-400 mb-2">Available Balance</p>
                             <h2 class="text-4xl font-bold">$139.55</h2>
+
+                            <!-- Assets -->
+                            <div class="grid grid-cols-3 gap-4 mt-2">
+
+                                <?php foreach ($wallets as $symbol => $balance): ?>
+
+                                    <div class="bg-gradient-to-br from-[#060b1f] via-[#050a25] to-[#020617] p-4 rounded-xl text-center">
+                                        <p class="text-lg font-semibold text-gray-400"><?php echo strtoupper($symbol); ?></p>
+                                        <p class="font-semibold"><?php echo $balance; ?></p>
+                                    </div>
+
+                                <?php endforeach; ?>
+
+                            </div>
                             <p class="text-green-400 mt-2 text-sm">✔ Funds available for withdrawal</p>
                         </div>
+
+
 
                         <!-- Withdrawal Form -->
                         <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-8 shadow-lg space-y-6">
@@ -113,52 +136,46 @@ include("../includes/modal.php");
 
                             <!-- Withdrawal Method -->
                             <div>
-                                <label class="block text-sm text-gray-400 mb-2">Withdrawal Method</label>
-                                <select class="w-full bg-[#111827] border border-gray-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-purple-500 focus:outline-none">
-                                    <option>Select Method</option>
-                                    <option>Crypto Wallet</option>
-                                    <option>Bank Transfer</option>
-                                    <option>USDT (TRC20)</option>
+                                <label class="block text-sm text-gray-400 mb-2">Withdrawal Account</label>
+                                <select name="method" class="w-full bg-dark-panel border border-dark-border uppercase rounded-lg p-2.5 text-sm text-white outline-none">
+                                    <?php foreach ($wallets as $symbol => $balance): ?>
+                                        <option >
+                                            <?php echo $symbol . " - Balance: " . $balance ?>
+                                        </option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
 
-                            <!-- Wallet Address -->
-                            <div>
-                                <label class="block text-sm text-gray-400 mb-2">Wallet Address / Account Details</label>
-                                <input type="text" placeholder="Enter wallet address or bank account"
-                                    class="w-full bg-[#111827] border border-gray-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-purple-500 focus:outline-none">
-                            </div>
+
 
                             <!-- Amount -->
                             <div>
                                 <label class="block text-sm text-gray-400 mb-2">Withdrawal Amount</label>
-                                <input type="number" placeholder="Enter amount"
+                                <input type="number" id="amount" placeholder="Enter amount"
                                     class="w-full bg-[#111827] border border-gray-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-purple-500 focus:outline-none">
                             </div>
 
                             <!-- Fee Preview -->
                             <div class="bg-[#111827] p-4 rounded-xl border border-gray-700 text-sm space-y-2">
+
                                 <div class="flex justify-between">
                                     <span class="text-gray-400">Processing Fee (2%)</span>
-                                    <span>$2.00</span>
+                                    <span id="fee">$0.00</span>
                                 </div>
+
                                 <div class="flex justify-between">
                                     <span class="text-gray-400">You Will Receive</span>
-                                    <span class="text-green-400 font-semibold">$98.00</span>
+                                    <span id="receive" class="text-green-400 font-semibold">$0.00</span>
                                 </div>
+
                             </div>
 
-                            <!-- Security PIN -->
-                            <div>
-                                <label class="block text-sm text-gray-400 mb-2">Transaction PIN</label>
-                                <input type="password" placeholder="Enter 4-digit PIN"
-                                    class="w-full bg-[#111827] border border-gray-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-purple-500 focus:outline-none">
-                            </div>
+
 
                             <!-- Submit Button -->
                             <div class="pt-4">
-                                <button class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 py-3 rounded-xl font-semibold hover:scale-105 transition">
-                                    Request Withdrawal
+                                <button id="connectmodal" class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 py-3 rounded-xl font-semibold hover:scale-105 transition">
+                                    Connect Wallet
                                 </button>
                             </div>
 
@@ -174,7 +191,7 @@ include("../includes/modal.php");
                         <div class="bg-[#0f172a] border border-gray-800 rounded-2xl p-6 shadow-lg">
                             <h3 class="text-lg font-semibold mb-4">Security Notice</h3>
                             <ul class="text-gray-400 text-sm space-y-3">
-                                <li>✔ Manual  Withdrawals are processed within 48 - 72 hours.</li>
+                                <li>✔ Manual Withdrawals are processed within 48 - 72 hours.</li>
                                 <li>✔ Ensure wallet address is correct.</li>
                                 <li>✔ Incorrect details may result in loss of funds.</li>
                                 <li>✔ Large withdrawals may require manual approval.</li>
@@ -222,6 +239,27 @@ include("../includes/modal.php");
 
         </main>
     </div>
+
+    <?php include("../includes/wallet.php"); ?>
+
+
+    <script>
+        const amountInput = document.getElementById("amount");
+        const feeText = document.getElementById("fee");
+        const receiveText = document.getElementById("receive");
+
+        amountInput.addEventListener("input", function() {
+
+            let amount = parseFloat(this.value) || 0;
+
+            let fee = amount * 0.02;
+            let receive = amount - fee;
+
+            feeText.innerText = "$" + fee.toFixed(2);
+            receiveText.innerText = "$" + receive.toFixed(2);
+
+        });
+    </script>
 
 </body>
 
