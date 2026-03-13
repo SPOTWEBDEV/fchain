@@ -240,11 +240,10 @@ include("./server/connection.php");
 
                     <div class="absolute inset-0 bg-brand-primary blur-[80px] opacity-20"></div>
 
-                    <img 
-    src="http://localhost/fchain/assets/images/robot.png" 
-    alt="MetaStake Platform" 
-    class="relative z-10 rounded-2xl shadow-neon border border-dark-border transform hover:scale-105 transition duration-500 w-full max-w-[420px] md:max-w-[420px]"
->
+                    <img
+                        src="http://localhost/fchain/assets/images/robot.png"
+                        alt="MetaStake Platform"
+                        class="relative z-10 rounded-2xl shadow-neon border border-dark-border transform hover:scale-105 transition duration-500 w-full max-w-[420px] md:max-w-[420px]">
 
 
                 </div>
@@ -319,9 +318,11 @@ include("./server/connection.php");
                     </div>
 
 
-                    <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
-                        Learn More
-                    </button>
+                    <a href="<?php echo $domain ?>auth/login">
+                        <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
+                            Learn More
+                        </button>
+                    </a>
 
                 </div>
 
@@ -496,72 +497,74 @@ include("./server/connection.php");
     </section>
 
     <section id="security" class="py-20 bg-dark-panel border-y border-dark-border overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
 
-            <!-- Image / Illustration -->
-            <div class="relative flex justify-center perspective-1000">
-                <div class="absolute inset-0 bg-brand-primary blur-[80px] opacity-20"></div>
+                <!-- Image / Illustration -->
+                <div class="relative flex justify-center perspective-1000">
+                    <div class="absolute inset-0 bg-brand-primary blur-[80px] opacity-20"></div>
 
-                <div class="w-full max-w-[380px] aspect-[1.586/1] rounded-2xl bg-gradient-to-br from-purple-500 to-blue-500 relative p-6 text-white shadow-neon transform rotate-3 hover:rotate-0 transition-transform duration-500 z-10 animate-float flex flex-col justify-center items-center border border-white/20 h-auto">
-                    <i class="fa-solid fa-shield-halved text-6xl md:text-8xl mb-4"></i>
-                    <h3 class="font-bold text-2xl md:text-3xl text-white text-center">Security & Transparency</h3>
+                    <div class="w-full max-w-[380px] aspect-[1.586/1] rounded-2xl bg-gradient-to-br from-purple-500 to-blue-500 relative p-6 text-white shadow-neon transform rotate-3 hover:rotate-0 transition-transform duration-500 z-10 animate-float flex flex-col justify-center items-center border border-white/20 h-auto">
+                        <i class="fa-solid fa-shield-halved text-6xl md:text-8xl mb-4"></i>
+                        <h3 class="font-bold text-2xl md:text-3xl text-white text-center">Security & Transparency</h3>
+                    </div>
                 </div>
+
+                <!-- Text Content -->
+                <div>
+                    <div class="inline-flex items-center gap-2 text-brand-secondary font-bold mb-4">
+                        <i class="fa-solid fa-lock"></i> TRUSTED PLATFORM
+                    </div>
+                    <h2 class="text-4xl font-display font-bold text-white mb-6">Ensuring <span class="text-brand-primary">Security & Transparency</span></h2>
+
+                    <p class="text-dark-muted text-lg mb-4">
+                        At MetaStake, your funds and personal data are protected with cutting-edge security protocols. Every transaction is encrypted and securely stored to guarantee safety at every step.
+                    </p>
+                    <p class="text-dark-muted text-lg mb-8">
+                        Our blockchain-powered systems ensure transparency and immutability, allowing you to verify every investment, bet, and trade directly on-chain. No hidden processes, complete visibility.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-shield"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">End-to-End Encryption</h4>
+                                <p class="text-xs text-dark-muted">Protecting your data & funds</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-file-contract"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Blockchain Audits</h4>
+                                <p class="text-xs text-dark-muted">Every transaction verifiable on-chain</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-user-shield"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Secure Accounts</h4>
+                                <p class="text-xs text-dark-muted">2FA & wallet protection</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-eye"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Full Transparency</h4>
+                                <p class="text-xs text-dark-muted">No hidden fees or processes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="<?php echo $domain ?>auth/login">
+                        <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
+                            Learn More
+                        </button>
+                    </a>
+                </div>
+
             </div>
-
-            <!-- Text Content -->
-            <div>
-                <div class="inline-flex items-center gap-2 text-brand-secondary font-bold mb-4">
-                    <i class="fa-solid fa-lock"></i> TRUSTED PLATFORM
-                </div>
-                <h2 class="text-4xl font-display font-bold text-white mb-6">Ensuring <span class="text-brand-primary">Security & Transparency</span></h2>
-                
-                <p class="text-dark-muted text-lg mb-4">
-                    At MetaStake, your funds and personal data are protected with cutting-edge security protocols. Every transaction is encrypted and securely stored to guarantee safety at every step.
-                </p>
-                <p class="text-dark-muted text-lg mb-8">
-                    Our blockchain-powered systems ensure transparency and immutability, allowing you to verify every investment, bet, and trade directly on-chain. No hidden processes, complete visibility.
-                </p>
-
-                <div class="grid grid-cols-2 gap-6 mb-8">
-                    <div class="flex gap-3">
-                        <div class="w-8 h-8 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-shield"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white">End-to-End Encryption</h4>
-                            <p class="text-xs text-dark-muted">Protecting your data & funds</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-3">
-                        <div class="w-8 h-8 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-file-contract"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white">Blockchain Audits</h4>
-                            <p class="text-xs text-dark-muted">Every transaction verifiable on-chain</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-3">
-                        <div class="w-8 h-8 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-user-shield"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white">Secure Accounts</h4>
-                            <p class="text-xs text-dark-muted">2FA & wallet protection</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-3">
-                        <div class="w-8 h-8 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-eye"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white">Full Transparency</h4>
-                            <p class="text-xs text-dark-muted">No hidden fees or processes</p>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
-                    Learn More
-                </button>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
 
     <section id="cards" class="py-20 bg-dark-panel border-y border-dark-border overflow-hidden">
@@ -634,10 +637,11 @@ include("./server/connection.php");
                             </div>
                         </div>
                     </div>
-
-                    <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
-                        Get Your Card
-                    </button>
+                    <a href="<?php echo $domain ?>auth/login">
+                        <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
+                           Get Your Card
+                        </button>
+                    </a>
                 </div>
 
             </div>
@@ -768,9 +772,13 @@ include("./server/connection.php");
                         </div>
                     </div>
 
-                    <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
-                        Start Betting
-                    </button>
+                   
+                    <a href="<?php echo $domain ?>auth/login">
+                        <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
+                            Start Betting
+                        </button>
+                    </a>
+                    
                 </div>
 
             </div>
@@ -841,9 +849,12 @@ include("./server/connection.php");
                         </div>
                     </div>
 
-                    <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
-                        Claim Your Rewards
-                    </button>
+                    
+                    <a href="<?php echo $domain ?>auth/login">
+                        <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
+                           Claim Your Rewards
+                        </button>
+                    </a>
                 </div>
 
             </div>
