@@ -31,7 +31,7 @@ $card = mysqli_fetch_assoc($cardQuery);
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><?php  echo $sitename ?> Dashboard</title>
+  <title><?php echo $sitename ?> Dashboard</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -121,24 +121,24 @@ $card = mysqli_fetch_assoc($cardQuery);
             <div class="flex flex-wrap gap-4 mt-8">
               <a href="../deposit/">
                 <button class="bg-purple-600 text-white px-6 py-3 rounded-xl font-semibold shadow-md hover:scale-105 transition flex items-center gap-2">
-                <i class="fa-solid fa-wallet"></i>
-                Deposit
-              </button>
+                  <i class="fa-solid fa-wallet"></i>
+                  Deposit
+                </button>
               </a>
-            
+
 
               <a href="../withdrawal/">
                 <button class="bg-red-600 text-white px-6 py-3 rounded-xl font-semibold shadow-md hover:scale-105 transition flex items-center gap-2">
-                <i class="fa-solid fa-money-bill-transfer"></i>
-                Withdrawal
-              </button>
+                  <i class="fa-solid fa-money-bill-transfer"></i>
+                  Withdrawal
+                </button>
               </a>
 
               <a href="../trading/">
                 <button class="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold shadow-md hover:scale-105 transition flex items-center gap-2">
-                <i class="fa-solid fa-chart-simple"></i>
-                Trading
-              </button>
+                  <i class="fa-solid fa-chart-simple"></i>
+                  Trading
+                </button>
               </a>
             </div>
 
@@ -173,29 +173,31 @@ $card = mysqli_fetch_assoc($cardQuery);
           <?php if ($card): ?>
             <a href="../virtual-card/">
               <div class="bg-gradient-to-br from-purple-600 to-indigo-600 p-6 rounded-2xl shadow-lg">
-              <p class="text-sm  text-white"><?php echo $sitename; ?></p>
-              <p class="text-xs uppercase tracking-wide opacity-60 mb-6">Virtual Mastercard</p>
+                <p class="text-sm  text-white"><?php echo $sitename; ?></p>
+                <p class="text-xs uppercase tracking-wide opacity-60 mb-6">Virtual Mastercard</p>
 
-              <div class="w-12 h-8 bg-yellow-400 rounded-md mb-6"></div>
-
-              <p class="tracking-widest mb-4">
-                <?php
-                // Insert a space every 4 digits
-                echo chunk_split($card['card_number'], 4, ' ');
-                ?>
-              </p>
-
-              <div class="flex justify-between text-sm">
-                <div>
-                  <p class="opacity-70">Cardholder</p>
-                  <p class="font-semibold"><?php echo $fullname; ?></p>
+                <div class="w-12 h-8 rounded-md mb-6">
+                  <img src="<?php echo ($card['card_type'] == 'Mastercard' ? 'https://www.mastercard.com/content/dam/mccom/shared/header/ma_symbol.svg' : 'https://img.icons8.com/?size=100&id=1429&format=png&color=000000'); ?>" alt="">
                 </div>
-                <div>
-                  <p class="opacity-70">Expires</p>
-                  <p class="font-semibold"><?php echo $card['expires']; ?></p>
+
+                <p class="tracking-widest mb-4">
+                  <?php
+                  // Insert a space every 4 digits
+                  echo chunk_split($card['card_number'], 4, ' ');
+                  ?>
+                </p>
+
+                <div class="flex justify-between text-sm">
+                  <div>
+                    <p class="opacity-70">Cardholder</p>
+                    <p class="font-semibold"><?php echo $fullname; ?></p>
+                  </div>
+                  <div>
+                    <p class="opacity-70">Expires</p>
+                    <p class="font-semibold"><?php echo $card['expires']; ?></p>
+                  </div>
                 </div>
               </div>
-            </div>
             </a>
           <?php endif; ?>
 
