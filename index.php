@@ -231,102 +231,102 @@ include("./server/connection.php");
     </section>
 
     <section id="about" class="py-20 bg-dark-bg border-y border-dark-border overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
 
-            <!-- Image / Visual -->
-            <div class="relative flex justify-center perspective-1000">
+                <!-- Image / Visual -->
+                <div class="relative flex justify-center perspective-1000">
 
-                <div class="absolute inset-0 bg-brand-primary blur-[80px] opacity-20"></div>
+                    <div class="absolute inset-0 bg-brand-primary blur-[80px] opacity-20"></div>
 
-                <img 
-                src="<?php echo $domain ?>assets/images/robot.png"
-                alt="MetaStake Platform"
-                class="relative z-10 rounded-2xl shadow-neon border border-dark-border transform hover:scale-105 transition duration-500 max-w-[420px]">
-
-            </div>
-
-
-            <!-- Content -->
-            <div>
-
-                <div class="inline-flex items-center gap-2 text-brand-secondary font-bold mb-4">
-                    <i class="fa-solid fa-circle-info"></i> ABOUT METASTAKE
-                </div>
-
-                <h2 class="text-4xl font-display font-bold text-white mb-6">
-                    Powering the Future of <span class="text-brand-primary">Web3 Finance</span>
-                </h2>
-
-                <p class="text-dark-muted text-lg mb-6">
-                    MetaStake is a next-generation Web3 financial ecosystem designed to empower users with advanced digital financial tools. 
-                    Our platform integrates crypto investments, AI-powered trading, secure digital payments, and decentralized financial services 
-                    into one seamless experience.
-                </p>
-
-                <p class="text-dark-muted text-lg mb-8">
-                    By combining blockchain technology with modern financial innovation, MetaStake gives users the ability to grow wealth, 
-                    manage digital assets, and access global financial opportunities without the traditional limitations of centralized systems.
-                </p>
-
-
-                <!-- Features -->
-                <div class="grid grid-cols-2 gap-6 mb-8">
-
-                    <div class="flex gap-3">
-                        <div class="w-8 h-8 rounded bg-dark-panel border border-dark-border flex items-center justify-center text-brand-primary">
-                            <i class="fa-solid fa-robot"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white">AI Auto Trading</h4>
-                            <p class="text-xs text-dark-muted">Smart automated strategies</p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-3">
-                        <div class="w-8 h-8 rounded bg-dark-panel border border-dark-border flex items-center justify-center text-brand-primary">
-                            <i class="fa-solid fa-chart-line"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white">Crypto Investment</h4>
-                            <p class="text-xs text-dark-muted">Grow assets with ease</p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-3">
-                        <div class="w-8 h-8 rounded bg-dark-panel border border-dark-border flex items-center justify-center text-brand-primary">
-                            <i class="fa-solid fa-arrows-rotate"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white">Instant Exchange</h4>
-                            <p class="text-xs text-dark-muted">Fast crypto swaps</p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-3">
-                        <div class="w-8 h-8 rounded bg-dark-panel border border-dark-border flex items-center justify-center text-brand-primary">
-                            <i class="fa-solid fa-gift"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white">Airdrop Rewards</h4>
-                            <p class="text-xs text-dark-muted">Earn free tokens</p>
-                        </div>
-                    </div>
+                    <img
+                        src="<?php echo $domain ?>assets/images/robot.png"
+                        alt="MetaStake Platform"
+                        class="relative z-10 rounded-2xl shadow-neon border border-dark-border transform hover:scale-105 transition duration-500 max-w-[420px]">
 
                 </div>
 
 
-                <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
-                    Learn More
-                </button>
+                <!-- Content -->
+                <div>
+
+                    <div class="inline-flex items-center gap-2 text-brand-secondary font-bold mb-4">
+                        <i class="fa-solid fa-circle-info"></i> ABOUT METASTAKE
+                    </div>
+
+                    <h2 class="text-4xl font-display font-bold text-white mb-6">
+                        Powering the Future of <span class="text-brand-primary">Web3 Finance</span>
+                    </h2>
+
+                    <p class="text-dark-muted text-lg mb-6">
+                        MetaStake is a next-generation Web3 financial ecosystem designed to empower users with advanced digital financial tools.
+                        Our platform integrates crypto investments, AI-powered trading, secure digital payments, and decentralized financial services
+                        into one seamless experience.
+                    </p>
+
+                    <p class="text-dark-muted text-lg mb-8">
+                        By combining blockchain technology with modern financial innovation, MetaStake gives users the ability to grow wealth,
+                        manage digital assets, and access global financial opportunities without the traditional limitations of centralized systems.
+                    </p>
+
+
+                    <!-- Features -->
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded bg-dark-panel border border-dark-border flex items-center justify-center text-brand-primary">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">AI Auto Trading</h4>
+                                <p class="text-xs text-dark-muted">Smart automated strategies</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded bg-dark-panel border border-dark-border flex items-center justify-center text-brand-primary">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Crypto Investment</h4>
+                                <p class="text-xs text-dark-muted">Grow assets with ease</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded bg-dark-panel border border-dark-border flex items-center justify-center text-brand-primary">
+                                <i class="fa-solid fa-arrows-rotate"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Instant Exchange</h4>
+                                <p class="text-xs text-dark-muted">Fast crypto swaps</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded bg-dark-panel border border-dark-border flex items-center justify-center text-brand-primary">
+                                <i class="fa-solid fa-gift"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Airdrop Rewards</h4>
+                                <p class="text-xs text-dark-muted">Earn free tokens</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
+                        Learn More
+                    </button>
+
+                </div>
 
             </div>
 
         </div>
-
-    </div>
-</section>
+    </section>
 
 
     <section id="wallet" class="py-16 relative bg-dark-panel/30 border-t border-dark-border">
@@ -493,6 +493,75 @@ include("./server/connection.php");
         </div>
     </section>
 
+    <section id="security" class="py-20 bg-dark-panel border-y border-dark-border overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+
+            <!-- Image / Illustration -->
+            <div class="relative flex justify-center perspective-1000">
+                <div class="absolute inset-0 bg-brand-primary blur-[80px] opacity-20"></div>
+
+                <div class="w-full max-w-[380px] aspect-[1.586/1] rounded-2xl bg-gradient-to-br from-purple-500 to-blue-500 relative p-6 text-white shadow-neon transform rotate-3 hover:rotate-0 transition-transform duration-500 z-10 animate-float flex flex-col justify-center items-center border border-white/20 h-auto">
+                    <i class="fa-solid fa-shield-halved text-6xl md:text-8xl mb-4"></i>
+                    <h3 class="font-bold text-2xl md:text-3xl text-white text-center">Security & Transparency</h3>
+                </div>
+            </div>
+
+            <!-- Text Content -->
+            <div>
+                <div class="inline-flex items-center gap-2 text-brand-secondary font-bold mb-4">
+                    <i class="fa-solid fa-lock"></i> TRUSTED PLATFORM
+                </div>
+                <h2 class="text-4xl font-display font-bold text-white mb-6">Ensuring <span class="text-brand-primary">Security & Transparency</span></h2>
+                
+                <p class="text-dark-muted text-lg mb-4">
+                    At MetaStake, your funds and personal data are protected with cutting-edge security protocols. Every transaction is encrypted and securely stored to guarantee safety at every step.
+                </p>
+                <p class="text-dark-muted text-lg mb-8">
+                    Our blockchain-powered systems ensure transparency and immutability, allowing you to verify every investment, bet, and trade directly on-chain. No hidden processes, complete visibility.
+                </p>
+
+                <div class="grid grid-cols-2 gap-6 mb-8">
+                    <div class="flex gap-3">
+                        <div class="w-8 h-8 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-shield"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white">End-to-End Encryption</h4>
+                            <p class="text-xs text-dark-muted">Protecting your data & funds</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <div class="w-8 h-8 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-file-contract"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white">Blockchain Audits</h4>
+                            <p class="text-xs text-dark-muted">Every transaction verifiable on-chain</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <div class="w-8 h-8 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-user-shield"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white">Secure Accounts</h4>
+                            <p class="text-xs text-dark-muted">2FA & wallet protection</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <div class="w-8 h-8 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-eye"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white">Full Transparency</h4>
+                            <p class="text-xs text-dark-muted">No hidden fees or processes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
+                    Learn More
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
     <section id="cards" class="py-20 bg-dark-panel border-y border-dark-border overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-16 items-center">
@@ -638,77 +707,146 @@ include("./server/connection.php");
         </div>
     </section>
 
-    <section id="airdrop" class="py-20 bg-dark-panel border-y border-dark-border overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
+    <section id="sports-betting" class="py-20 bg-dark-panel border-y border-dark-border overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
 
-            <!-- Image / Illustration -->
-            <div class="relative flex justify-center perspective-1000">
-                <div class="absolute inset-0 bg-brand-primary blur-[80px] opacity-20"></div>
+                <!-- Image -->
+                <div class="relative flex justify-center perspective-1000">
+                    <div class="absolute inset-0 bg-brand-primary blur-[80px] opacity-20"></div>
 
-                <div class="w-full max-w-[380px] aspect-[1/1.2] rounded-2xl bg-gradient-to-br from-purple-600 to-blue-500 p-6 text-white shadow-neon transform rotate-3 hover:rotate-0 transition-transform duration-500 z-10 flex flex-col justify-center items-center border border-white/20 h-auto">
-                    <i class="fa-solid fa-gift text-6xl md:text-8xl opacity-80 mb-6"></i>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white text-center">Claim Your Airdrop!</h3>
-                    <p class="text-white/80 text-center mt-2 text-sm md:text-base">
-                        Get exclusive MetaStake tokens by participating in our community rewards program. Instant, secure, and exciting!
+                    <div class="w-full max-w-[380px] aspect-[1.586/1] rounded-2xl bg-gradient-to-br from-purple-500 to-blue-500 relative p-6 text-white shadow-neon transform rotate-3 hover:rotate-0 transition-transform duration-500 z-10 animate-float flex flex-col justify-center items-center border border-white/20 h-auto">
+                        <i class="fa-solid fa-futbol text-6xl md:text-8xl mb-4"></i>
+                        <h3 class="font-bold text-2xl md:text-3xl text-white text-center">Web3 Sports Betting</h3>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div>
+                    <div class="inline-flex items-center gap-2 text-brand-secondary font-bold mb-4">
+                        <i class="fa-solid fa-robot"></i> BET & WIN
+                    </div>
+                    <h2 class="text-4xl font-display font-bold text-white mb-6">Next-Gen <span class="text-brand-primary">Sports Betting</span></h2>
+
+                    <p class="text-dark-muted text-lg mb-4">
+                        Experience decentralized sports betting powered by Web3. Place bets securely on football, basketball, tennis, and more using crypto. Fast, transparent, and fair.
                     </p>
+                    <p class="text-dark-muted text-lg mb-8">
+                        Track your winnings instantly on-chain and enjoy competitive odds. Our AI-powered prediction tools help enhance your strategy and maximize your chances.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-chart-line"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Real-Time Stats</h4>
+                                <p class="text-xs text-dark-muted">Stay updated on live matches</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-wallet"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Crypto Payments</h4>
+                                <p class="text-xs text-dark-muted">Fast and secure deposits & withdrawals</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-percent"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Boosted Rewards</h4>
+                                <p class="text-xs text-dark-muted">Exclusive bonuses for Web3 players</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-lock"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Fair & Transparent</h4>
+                                <p class="text-xs text-dark-muted">All bets verifiable on blockchain</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
+                        Start Betting
+                    </button>
                 </div>
+
             </div>
-
-            <!-- Content -->
-            <div>
-                <div class="inline-flex items-center gap-2 text-brand-secondary font-bold mb-4">
-                    <i class="fa-solid fa-rocket"></i> AIRDROP REWARDS
-                </div>
-                <h2 class="text-4xl font-display font-bold text-white mb-6">
-                    Join the <span class="text-brand-primary">MetaStake Airdrop</span> Program Today
-                </h2>
-                <p class="text-dark-muted text-lg mb-6">
-                    Participate in our airdrop to earn free tokens, NFT rewards, and bonus incentives. Grow your portfolio effortlessly while enjoying the benefits of being an early MetaStake supporter.
-                </p>
-                <p class="text-dark-muted text-lg mb-8">
-                    Our airdrop program is simple: follow the steps, claim your rewards, and watch your digital assets grow. Every eligible participant receives exclusive perks designed to enhance their experience on the MetaStake platform.
-                </p>
-
-                <div class="grid grid-cols-2 gap-6 mb-8">
-                    <div class="flex gap-3">
-                        <div class="w-10 h-10 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-user-check"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white">Easy Eligibility</h4>
-                            <p class="text-xs text-dark-muted">Simple steps to qualify</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-3">
-                        <div class="w-10 h-10 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-wallet"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white">Instant Rewards</h4>
-                            <p class="text-xs text-dark-muted">Tokens delivered to your wallet</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-3">
-                        <div class="w-10 h-10 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white">Bonus Incentives</h4>
-                            <p class="text-xs text-dark-muted">Extra perks for early participants</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-3">
-                        <div class="w-10 h-10 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-shield-halved"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white">Secure & Transparent</h4>
-                            <p class="text-xs text-dark-muted">Your tokens are safe on-chain</p>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
-                    Claim Your Rewards
-                </button>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
+
+
+    <section id="airdrop" class="py-20 bg-dark-panel border-y border-dark-border overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+
+                <!-- Image / Illustration -->
+                <div class="relative flex justify-center perspective-1000">
+                    <div class="absolute inset-0 bg-brand-primary blur-[80px] opacity-20"></div>
+
+                    <div class="w-full max-w-[380px] aspect-[1/1.2] rounded-2xl bg-gradient-to-br from-purple-600 to-blue-500 p-6 text-white shadow-neon transform rotate-3 hover:rotate-0 transition-transform duration-500 z-10 flex flex-col justify-center items-center border border-white/20 h-auto">
+                        <i class="fa-solid fa-gift text-6xl md:text-8xl opacity-80 mb-6"></i>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white text-center">Claim Your Airdrop!</h3>
+                        <p class="text-white/80 text-center mt-2 text-sm md:text-base">
+                            Get exclusive MetaStake tokens by participating in our community rewards program. Instant, secure, and exciting!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div>
+                    <div class="inline-flex items-center gap-2 text-brand-secondary font-bold mb-4">
+                        <i class="fa-solid fa-rocket"></i> AIRDROP REWARDS
+                    </div>
+                    <h2 class="text-4xl font-display font-bold text-white mb-6">
+                        Join the <span class="text-brand-primary">MetaStake Airdrop</span> Program Today
+                    </h2>
+                    <p class="text-dark-muted text-lg mb-6">
+                        Participate in our airdrop to earn free tokens, NFT rewards, and bonus incentives. Grow your portfolio effortlessly while enjoying the benefits of being an early MetaStake supporter.
+                    </p>
+                    <p class="text-dark-muted text-lg mb-8">
+                        Our airdrop program is simple: follow the steps, claim your rewards, and watch your digital assets grow. Every eligible participant receives exclusive perks designed to enhance their experience on the MetaStake platform.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-user-check"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Easy Eligibility</h4>
+                                <p class="text-xs text-dark-muted">Simple steps to qualify</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-wallet"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Instant Rewards</h4>
+                                <p class="text-xs text-dark-muted">Tokens delivered to your wallet</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Bonus Incentives</h4>
+                                <p class="text-xs text-dark-muted">Extra perks for early participants</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Secure & Transparent</h4>
+                                <p class="text-xs text-dark-muted">Your tokens are safe on-chain</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
+                        Claim Your Rewards
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
 
     <section id="market" class="py-20 bg-dark-panel border-t border-dark-border">
