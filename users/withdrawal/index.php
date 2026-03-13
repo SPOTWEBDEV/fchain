@@ -11,6 +11,33 @@ $userData = mysqli_fetch_assoc($userQuery);
 $wallets = json_decode($userData['wallet'], true); // e.g. ["btc"=>110,"eth"=>20,"sol"=>50]
 
 
+
+$query = mysqli_query($connection, "SELECT sum(balance) as total FROM card WHERE user='$id' AND is_active='active' LIMIT 1");
+$cardDetail = mysqli_fetch_assoc($query);
+
+
+$selectSite = mysqli_fetch_assoc(mysqli_query($connection, "SELECT `withdraw_charge` FROM `sitedetails`"));
+
+
+$withdrawals = [];
+
+$stmt = $connection->prepare("SELECT id, account, amount, status, created_at 
+FROM withdrawals 
+WHERE login_id = ? 
+ORDER BY created_at DESC 
+LIMIT 5");
+
+$stmt->bind_param("i", $id);
+$stmt->execute();
+
+$result = $stmt->get_result();
+
+while ($row = $result->fetch_assoc()) {
+    $withdrawals[] = $row;
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -114,11 +141,11 @@ $wallets = json_decode($userData['wallet'], true); // e.g. ["btc"=>110,"eth"=>20
                             <!-- Assets -->
                             <div class="grid grid-cols-3 gap-4 mt-2">
 
-                                <?php foreach ($wallets as $symbol => $balance): ?>
+                                <?php foreach ($wallets as $symbol => $balances): ?>
 
                                     <div class="bg-gradient-to-br from-[#060b1f] via-[#050a25] to-[#020617] p-4 rounded-xl text-center">
                                         <p class="text-lg font-semibold text-gray-400"><?php echo strtoupper($symbol); ?></p>
-                                        <p class="font-semibold"><?php echo $balance; ?></p>
+                                        <p class="font-semibold"><?php echo $balances; ?></p>
                                     </div>
 
                                 <?php endforeach; ?>
@@ -137,12 +164,22 @@ $wallets = json_decode($userData['wallet'], true); // e.g. ["btc"=>110,"eth"=>20
                             <!-- Withdrawal Method -->
                             <div>
                                 <label class="block text-sm text-gray-400 mb-2">Withdrawal Account</label>
-                                <select name="method" class="w-full bg-dark-panel border border-dark-border uppercase rounded-lg p-2.5 text-sm text-white outline-none">
-                                    <?php foreach ($wallets as $symbol => $balance): ?>
-                                        <option >
-                                            <?php echo $symbol . " - Balance: " . $balance ?>
+                                <select id="withdrawAccount" name="method" class="w-full bg-dark-panel border border-dark-border uppercase rounded-lg p-2.5 text-sm text-white outline-none">
+
+                                    <option value="main" data-balance="<?php echo $balance ?>">
+                                        Main Balance - Balance: <?php echo number_format($balance, 2) ?>
+                                    </option>
+
+                                    <option value="card" data-balance="<?php echo $cardDetail['total'] ?>">
+                                        Virtual Card - Balance: <?php echo number_format($cardDetail['total'], 2) ?>
+                                    </option>
+
+                                    <?php foreach ($wallets as $symbol => $bal): ?>
+                                        <option value="<?php echo $symbol ?>" data-balance="<?php echo $bal ?>">
+                                            <?php echo strtoupper($symbol) . " - Balance: " . number_format($bal, 4) ?>
                                         </option>
                                     <?php endforeach; ?>
+
                                 </select>
                             </div>
 
@@ -174,7 +211,7 @@ $wallets = json_decode($userData['wallet'], true); // e.g. ["btc"=>110,"eth"=>20
 
                             <!-- Submit Button -->
                             <div class="pt-4">
-                                <button id="connectmodal" class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 py-3 rounded-xl font-semibold hover:scale-105 transition">
+                                <button id="withdrawal_modal" class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 py-3 rounded-xl font-semibold hover:scale-105 transition">
                                     Connect Wallet
                                 </button>
                             </div>
@@ -204,29 +241,62 @@ $wallets = json_decode($userData['wallet'], true); // e.g. ["btc"=>110,"eth"=>20
 
                             <div class="space-y-4 text-sm">
 
-                                <div class="flex justify-between border-b border-gray-800 pb-3">
-                                    <div>
-                                        <p>$50.00</p>
-                                        <p class="text-gray-400 text-xs">USDT - TRC20</p>
-                                    </div>
-                                    <span class="text-yellow-400">Pending</span>
-                                </div>
+                                <?php if (!empty($withdrawals)): ?>
 
-                                <div class="flex justify-between border-b border-gray-800 pb-3">
-                                    <div>
-                                        <p>$100.00</p>
-                                        <p class="text-gray-400 text-xs">Bitcoin</p>
-                                    </div>
-                                    <span class="text-green-400">Completed</span>
-                                </div>
+                                    <?php foreach ($withdrawals as $w): ?>
 
-                                <div class="flex justify-between">
-                                    <div>
-                                        <p>$75.00</p>
-                                        <p class="text-gray-400 text-xs">Bank Transfer</p>
-                                    </div>
-                                    <span class="text-red-400">Rejected</span>
-                                </div>
+                                        <?php
+                                        $statusColor = "text-yellow-400";
+
+                                        if ($w['status'] == "completed") {
+                                            $statusColor = "text-green-400";
+                                        } elseif ($w['status'] == "rejected") {
+                                            $statusColor = "text-red-400";
+                                        }
+
+                                        $accountName = $w['account'];
+                                        ?>
+
+                                        <div class="flex justify-between border-b border-gray-800 pb-3">
+                                            <div>
+                                                <p>
+                                                    <?php
+                                                    if ($w['account'] == "main" || $w['account'] == "card") {
+                                                        echo "$" . number_format($w['amount'], 2);
+                                                    } else {
+                                                        echo number_format($w['amount'], 6) . " " . strtoupper($w['account']);
+                                                    }
+                                                    ?>
+                                                </p>
+
+                                                <p class="text-gray-400 uppercase  text-xs">
+                                                    <?php
+
+                                                    if ($accountName == 'card') {
+                                                        echo  'Virtual ' .  $accountName;
+                                                    }
+                                                    else if($accountName == 'main') {
+                                                        echo   $accountName . ' Balance';
+                                                    } else {
+                                                        echo  'Wallet Balance -> ' .  $accountName;
+                                                    }
+
+                                                    ?>
+                                                </p>
+                                            </div>
+
+                                            <span class="<?php echo $statusColor; ?>">
+                                                <?php echo ucfirst($w['status']); ?>
+                                            </span>
+                                        </div>
+
+                                    <?php endforeach; ?>
+
+                                <?php else: ?>
+
+                                    <p class="text-gray-400 text-sm">No withdrawals yet.</p>
+
+                                <?php endif; ?>
 
                             </div>
                         </div>
@@ -247,18 +317,35 @@ $wallets = json_decode($userData['wallet'], true); // e.g. ["btc"=>110,"eth"=>20
         const amountInput = document.getElementById("amount");
         const feeText = document.getElementById("fee");
         const receiveText = document.getElementById("receive");
+        const accountSelect = document.getElementById("withdrawAccount");
 
-        amountInput.addEventListener("input", function() {
+        function updatePreview() {
 
-            let amount = parseFloat(this.value) || 0;
+            let amount = parseFloat(amountInput.value) || 0;
 
-            let fee = amount * 0.02;
+            let fee = amount * ("<?php echo $selectSite['withdraw_charge'] ?>" / 100);
             let receive = amount - fee;
 
-            feeText.innerText = "$" + fee.toFixed(2);
-            receiveText.innerText = "$" + receive.toFixed(2);
+            let account = accountSelect.value;
 
-        });
+            // USD accounts
+            if (account === "main" || account === "card") {
+                feeText.innerText = "$" + fee.toFixed(2);
+                receiveText.innerText = "$" + receive.toFixed(2);
+            }
+            // Crypto accounts
+            else {
+                feeText.innerText = fee.toFixed(6) + " " + account.toUpperCase();
+                receiveText.innerText = receive.toFixed(6) + " " + account.toUpperCase();
+            }
+
+        }
+
+        // Update when typing amount
+        amountInput.addEventListener("input", updatePreview);
+
+        // Update when account changes
+        accountSelect.addEventListener("change", updatePreview);
     </script>
 
 </body>
