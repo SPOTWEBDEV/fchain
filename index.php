@@ -240,10 +240,12 @@ include("./server/connection.php");
 
                     <div class="absolute inset-0 bg-brand-primary blur-[80px] opacity-20"></div>
 
-                    <img
-                        src="<?php echo $domain ?>assets/images/robot.png"
-                        alt="MetaStake Platform"
-                        class="relative z-10 rounded-2xl shadow-neon border border-dark-border transform hover:scale-105 transition duration-500 max-w-[420px]">
+                    <img 
+    src="http://localhost/fchain/assets/images/robot.png" 
+    alt="MetaStake Platform" 
+    class="relative z-10 rounded-2xl shadow-neon border border-dark-border transform hover:scale-105 transition duration-500 w-full max-w-[420px] md:max-w-[420px]"
+>
+
 
                 </div>
 
