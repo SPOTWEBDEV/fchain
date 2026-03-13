@@ -241,7 +241,7 @@ include("./server/connection.php");
                 <div class="absolute inset-0 bg-brand-primary blur-[80px] opacity-20"></div>
 
                 <img 
-                src="<?php echo $domain ?>assets/images/about/metastake-about.png"
+                src="<?php echo $domain ?>assets/images/robot.png"
                 alt="MetaStake Platform"
                 class="relative z-10 rounded-2xl shadow-neon border border-dark-border transform hover:scale-105 transition duration-500 max-w-[420px]">
 
@@ -637,6 +637,79 @@ include("./server/connection.php");
             </div>
         </div>
     </section>
+
+    <section id="airdrop" class="py-20 bg-dark-panel border-y border-dark-border overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+
+            <!-- Image / Illustration -->
+            <div class="relative flex justify-center perspective-1000">
+                <div class="absolute inset-0 bg-brand-primary blur-[80px] opacity-20"></div>
+
+                <div class="w-full max-w-[380px] aspect-[1/1.2] rounded-2xl bg-gradient-to-br from-purple-600 to-blue-500 p-6 text-white shadow-neon transform rotate-3 hover:rotate-0 transition-transform duration-500 z-10 flex flex-col justify-center items-center border border-white/20 h-auto">
+                    <i class="fa-solid fa-gift text-6xl md:text-8xl opacity-80 mb-6"></i>
+                    <h3 class="text-2xl md:text-3xl font-bold text-white text-center">Claim Your Airdrop!</h3>
+                    <p class="text-white/80 text-center mt-2 text-sm md:text-base">
+                        Get exclusive MetaStake tokens by participating in our community rewards program. Instant, secure, and exciting!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div>
+                <div class="inline-flex items-center gap-2 text-brand-secondary font-bold mb-4">
+                    <i class="fa-solid fa-rocket"></i> AIRDROP REWARDS
+                </div>
+                <h2 class="text-4xl font-display font-bold text-white mb-6">
+                    Join the <span class="text-brand-primary">MetaStake Airdrop</span> Program Today
+                </h2>
+                <p class="text-dark-muted text-lg mb-6">
+                    Participate in our airdrop to earn free tokens, NFT rewards, and bonus incentives. Grow your portfolio effortlessly while enjoying the benefits of being an early MetaStake supporter.
+                </p>
+                <p class="text-dark-muted text-lg mb-8">
+                    Our airdrop program is simple: follow the steps, claim your rewards, and watch your digital assets grow. Every eligible participant receives exclusive perks designed to enhance their experience on the MetaStake platform.
+                </p>
+
+                <div class="grid grid-cols-2 gap-6 mb-8">
+                    <div class="flex gap-3">
+                        <div class="w-10 h-10 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-user-check"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white">Easy Eligibility</h4>
+                            <p class="text-xs text-dark-muted">Simple steps to qualify</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <div class="w-10 h-10 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-wallet"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white">Instant Rewards</h4>
+                            <p class="text-xs text-dark-muted">Tokens delivered to your wallet</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <div class="w-10 h-10 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white">Bonus Incentives</h4>
+                            <p class="text-xs text-dark-muted">Extra perks for early participants</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <div class="w-10 h-10 rounded bg-dark-bg border border-dark-border flex items-center justify-center text-brand-primary"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white">Secure & Transparent</h4>
+                            <p class="text-xs text-dark-muted">Your tokens are safe on-chain</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
+                    Claim Your Rewards
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 
     <section id="market" class="py-20 bg-dark-panel border-t border-dark-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
