@@ -6,15 +6,16 @@ include("./server/connection.php");
 
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php  echo $sitename ?> - DeFi, Wallet & Investments</title>
-    
+    <title><?php echo $sitename ?> - DeFi, Wallet & Investments</title>
+
     <script src="https://cdn.tailwindcss.com/"></script>
-    
+
     <link rel="stylesheet" href="<?php echo $domain; ?>assets/vendor/cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 
     <script>
@@ -33,9 +34,9 @@ include("./server/connection.php");
                             accent: '#4F46E5',
                             dark: '#312E81'
                         },
-                        dark: { 
-                            bg: '#02040a', 
-                            panel: '#0B0F19', 
+                        dark: {
+                            bg: '#02040a',
+                            panel: '#0B0F19',
                             card: '#111827',
                             border: '#1E293B',
                             text: '#E2E8F0',
@@ -52,8 +53,11 @@ include("./server/connection.php");
     </script>
 
     <style>
-        body { background-color: #02040a; color: #E2E8F0; }
-        
+        body {
+            background-color: #02040a;
+            color: #E2E8F0;
+        }
+
         /* Glassmorphism Card Effect */
         .glass-card {
             background: rgba(17, 24, 39, 0.7);
@@ -68,24 +72,54 @@ include("./server/connection.php");
 
         /* Animations */
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
-        .animate-float { animation: float 6s ease-in-out infinite; }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
 
         @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
-        .animate-marquee { animation: marquee 30s linear infinite; }
-        
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        
+
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
         /* Mobile Menu */
-        #mobile-menu { transition: all 0.3s ease-in-out; max-height: 0; opacity: 0; overflow: hidden; }
-        #mobile-menu.open { max-height: 500px; opacity: 1; }
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        #mobile-menu.open {
+            max-height: 500px;
+            opacity: 1;
+        }
     </style>
 </head>
+
 <body class="antialiased overflow-x-hidden selection:bg-brand-primary selection:text-white">
 
     <div class="bg-dark-panel border-b border-dark-border py-2 overflow-hidden whitespace-nowrap z-50">
@@ -101,7 +135,7 @@ include("./server/connection.php");
                     <div class="w-10 h-10 rounded-xl bg-brand-primary flex items-center justify-center shadow-neon">
                         <span class="font-bold text-white text-xl">F</span>
                     </div>
-                    <span class="font-sans font-bold text-xl tracking-tight text-white"><?php  echo $sitename ?></span>
+                    <span class="font-sans font-bold text-xl tracking-tight text-white"><?php echo $sitename ?></span>
                 </div>
 
                 <div class="hidden lg:block">
@@ -115,7 +149,7 @@ include("./server/connection.php");
 
                 <div class="flex items-center gap-4">
                     <a href='auth/login'> <button class="hidden md:block bg-transparent hover:text-white text-gray-300 px-5 py-2 text-sm font-medium transition-all">Log In</button></a>
-                   <a href='auth/register.html'> <button class="bg-white hover:bg-gray-200 text-black px-6 py-2.5 rounded-full text-sm font-bold shadow-lg transition-all hover:scale-105">Get Started</button></a>
+                    <a href='auth/register.html'> <button class="bg-white hover:bg-gray-200 text-black px-6 py-2.5 rounded-full text-sm font-bold shadow-lg transition-all hover:scale-105">Get Started</button></a>
                     <button id="mobile-menu-btn" class="lg:hidden text-gray-300 hover:text-white"><i class="fa-solid fa-bars text-2xl"></i></button>
                 </div>
             </div>
@@ -125,32 +159,35 @@ include("./server/connection.php");
                 <a href="#wallet" class="block text-gray-300 hover:text-white">Wallet</a>
                 <a href="#invest" class="block text-gray-300 hover:text-white">Investments</a>
                 <a href="#cards" class="block text-gray-300 hover:text-white">Cards</a>
-                  <a href="auth/login" class="block text-gray-300 hover:text-white">Login</a>
-                   <a href="auth/register" class="block text-gray-300 hover:text-white">Register</a>
-                
+                <a href="auth/login" class="block text-gray-300 hover:text-white">Login</a>
+                <a href="auth/register" class="block text-gray-300 hover:text-white">Register</a>
+
             </div>
         </div>
     </nav>
 
     <section class="relative pt-24 pb-20 overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-primary/20 via-transparent to-transparent opacity-50 pointer-events-none"></div>
-        
+
         <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
-            
+
             <div class="inline-block px-4 py-1.5 rounded-full bg-[#1a1f35] border border-brand-primary/30 text-brand-secondary text-[10px] md:text-xs font-bold tracking-widest uppercase mb-8">
                 Institutional Asset Management
             </div>
-            
+
             <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-6 leading-[0.9] text-white">
                 REDEFINING <br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-b from-brand-secondary to-brand-primary">DIGITAL</span> <br>
                 WEALTH
             </h1>
-            
+
             <p class="text-base md:text-lg text-gray-400 max-w-xl mx-auto mb-10 font-medium leading-relaxed">
-                The all-in-one ecosystem for professional crypto banking, automated trading, and high-yield staking. Built for the elite, accessible to you.
+                MetaStake is a powerful Web3 financial platform designed to help users grow their digital assets with confidence. Whether you're investing, trading, exchanging crypto, or using virtual cards for everyday payments, MetaStake provides the tools you need to manage your finances in the decentralized economy.
             </p>
-            
+            <p class="text-base md:text-lg text-gray-400 max-w-xl mx-auto mb-10 font-medium leading-relaxed">
+                Our ecosystem combines advanced AI trading, secure investment opportunities, Web3 sports betting, and seamless crypto exchange into one easy-to-use platform. With MetaStake, you are not just using a financial service — you are stepping into the next generation of digital wealth creation.
+            </p>
+
             <div class="flex justify-center w-full">
                 <a href="auth/login" class="w-full md:w-auto bg-brand-primary hover:bg-brand-accent text-white px-10 py-4 rounded-xl font-bold text-lg shadow-neon transition-all hover:scale-[1.02] active:scale-95">
                     Explore Dashboard
@@ -163,7 +200,7 @@ include("./server/connection.php");
         <div class="w-full max-w-[95%] mx-auto px-2 md:px-0">
             <div class="relative group">
                 <div class="absolute -inset-1 bg-gradient-to-r from-brand-primary via-purple-600 to-brand-primary opacity-30 blur-2xl group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                
+
                 <div class="relative rounded-xl bg-dark-panel border border-dark-border shadow-2xl overflow-hidden ring-1 ring-white/10">
                     <div class="h-10 bg-dark-card border-b border-dark-border flex items-center px-4 gap-2">
                         <div class="flex gap-2">
@@ -172,15 +209,16 @@ include("./server/connection.php");
                             <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
                         </div>
                         <div class="mx-auto w-1/2 md:w-2/3 h-6 bg-dark-bg rounded border border-dark-border flex items-center justify-center text-xs text-dark-muted font-mono overflow-hidden whitespace-nowrap px-2">
-                            <i class="fa-solid fa-lock mr-2 text-green-500"></i> https://devionicsolutions.com.ng/fichain                        </div>
+                            <i class="fa-solid fa-lock mr-2 text-green-500"></i> <?php echo $domain ?>
+                        </div>
                     </div>
 
                     <div class="aspect-[16/9] md:aspect-[21/9] bg-dark-bg relative overflow-hidden">
-                        <img src="assets/images/dash.png" 
-                            alt="Dashboard Preview" 
+                        <img src="assets/images/dash.png"
+                            alt="Dashboard Preview"
                             class="w-full h-full object-cover object-top"
                             loading="lazy">
-                        
+
                         <div class="absolute inset-0 bg-dark-bg/0 hover:bg-dark-bg/10 transition-colors flex items-center justify-center opacity-0 hover:opacity-100 cursor-pointer">
                             <span class="bg-brand-primary text-white px-4 py-2 rounded-lg font-bold shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform">
                                 Live Preview
@@ -192,10 +230,109 @@ include("./server/connection.php");
         </div>
     </section>
 
+    <section id="about" class="py-20 bg-dark-bg border-y border-dark-border overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+
+            <!-- Image / Visual -->
+            <div class="relative flex justify-center perspective-1000">
+
+                <div class="absolute inset-0 bg-brand-primary blur-[80px] opacity-20"></div>
+
+                <img 
+                src="<?php echo $domain ?>assets/images/about/metastake-about.png"
+                alt="MetaStake Platform"
+                class="relative z-10 rounded-2xl shadow-neon border border-dark-border transform hover:scale-105 transition duration-500 max-w-[420px]">
+
+            </div>
+
+
+            <!-- Content -->
+            <div>
+
+                <div class="inline-flex items-center gap-2 text-brand-secondary font-bold mb-4">
+                    <i class="fa-solid fa-circle-info"></i> ABOUT METASTAKE
+                </div>
+
+                <h2 class="text-4xl font-display font-bold text-white mb-6">
+                    Powering the Future of <span class="text-brand-primary">Web3 Finance</span>
+                </h2>
+
+                <p class="text-dark-muted text-lg mb-6">
+                    MetaStake is a next-generation Web3 financial ecosystem designed to empower users with advanced digital financial tools. 
+                    Our platform integrates crypto investments, AI-powered trading, secure digital payments, and decentralized financial services 
+                    into one seamless experience.
+                </p>
+
+                <p class="text-dark-muted text-lg mb-8">
+                    By combining blockchain technology with modern financial innovation, MetaStake gives users the ability to grow wealth, 
+                    manage digital assets, and access global financial opportunities without the traditional limitations of centralized systems.
+                </p>
+
+
+                <!-- Features -->
+                <div class="grid grid-cols-2 gap-6 mb-8">
+
+                    <div class="flex gap-3">
+                        <div class="w-8 h-8 rounded bg-dark-panel border border-dark-border flex items-center justify-center text-brand-primary">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">AI Auto Trading</h4>
+                            <p class="text-xs text-dark-muted">Smart automated strategies</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <div class="w-8 h-8 rounded bg-dark-panel border border-dark-border flex items-center justify-center text-brand-primary">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Crypto Investment</h4>
+                            <p class="text-xs text-dark-muted">Grow assets with ease</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <div class="w-8 h-8 rounded bg-dark-panel border border-dark-border flex items-center justify-center text-brand-primary">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Instant Exchange</h4>
+                            <p class="text-xs text-dark-muted">Fast crypto swaps</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <div class="w-8 h-8 rounded bg-dark-panel border border-dark-border flex items-center justify-center text-brand-primary">
+                            <i class="fa-solid fa-gift"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Airdrop Rewards</h4>
+                            <p class="text-xs text-dark-muted">Earn free tokens</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
+                    Learn More
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
     <section id="wallet" class="py-16 relative bg-dark-panel/30 border-t border-dark-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-3 gap-8">
-                
+
                 <div class="lg:col-span-2">
                     <div class="glass-card rounded-2xl overflow-hidden shadow-card h-full">
                         <div class="p-6 border-b border-dark-border flex justify-between items-center bg-dark-panel/50">
@@ -213,7 +350,7 @@ include("./server/connection.php");
                             <div class="flex flex-col justify-center">
                                 <p class="text-dark-muted text-sm mb-1">Total Balance</p>
                                 <h2 class="text-4xl font-display font-bold text-white mb-6">$42,894.52</h2>
-                                
+
                                 <div class="grid grid-cols-3 gap-3">
                                     <button onclick="switchTab('send')" class="flex flex-col items-center gap-2 p-3 rounded-xl bg-dark-bg border border-dark-border hover:border-brand-primary hover:bg-brand-primary/10 transition-all group">
                                         <div class="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white">
@@ -237,7 +374,7 @@ include("./server/connection.php");
                             </div>
 
                             <div class="bg-dark-bg rounded-xl border border-dark-border p-5 min-h-[300px] relative">
-                                
+
                                 <div id="tab-send" class="space-y-4">
                                     <div class="flex justify-between items-center mb-2">
                                         <h4 class="font-bold text-white">Send Crypto</h4>
@@ -359,14 +496,14 @@ include("./server/connection.php");
     <section id="cards" class="py-20 bg-dark-panel border-y border-dark-border overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-16 items-center">
-                
+
                 <div class="relative flex justify-center perspective-1000">
                     <div class="absolute inset-0 bg-brand-primary blur-[80px] opacity-20"></div>
-                    
+
                     <div class="w-full max-w-[380px] aspect-[1.586/1] rounded-2xl credit-card-bg relative p-6 text-white shadow-neon transform rotate-3 hover:rotate-0 transition-transform duration-500 z-10 animate-float flex flex-col justify-between border border-white/20 h-auto">
                         <div class="flex justify-between items-start">
                             <i class="fa-solid fa-wifi text-2xl opacity-80"></i>
-                            <span class="font-display font-bold text-xl italic"><?php  echo $sitename ?></span>
+                            <span class="font-display font-bold text-xl italic"><?php echo $sitename ?></span>
                         </div>
                         <div class="my-2 md:my-4">
                             <i class="fa-solid fa-microchip text-4xl text-yellow-300 opacity-80"></i>
@@ -426,7 +563,7 @@ include("./server/connection.php");
                             </div>
                         </div>
                     </div>
-                    
+
                     <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
                         Get Your Card
                     </button>
@@ -439,10 +576,15 @@ include("./server/connection.php");
     <section id="invest" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-4xl font-display font-bold text-white mb-4">Investment <span class="text-brand-primary">Plans</span></h2>
-            <p class="text-dark-muted max-w-2xl mx-auto mb-16">Choose a staking plan that fits your financial goals. Earn passive income with daily payouts.</p>
+            <p>
+                MetaStake provides users with carefully structured investment opportunities designed to generate consistent returns in the evolving digital asset market. Our investment plans are built with transparency, allowing users to clearly understand their potential returns, duration, and growth opportunities.
+
+                With a focus on long-term value creation, MetaStake allows investors to participate in advanced trading strategies and digital asset management. Whether you're a beginner exploring crypto investments or an experienced investor looking for diversified income streams, our platform provides flexible plans tailored to your goals.
+            </p>
+            <p class="text-brand-primary max-w-2xl mx-auto mt-8 mb-16">Choose a staking plan that fits your financial goals. Earn passive income with daily payouts.</p>
 
             <div class="grid md:grid-cols-3 gap-8">
-                
+
                 <div class="glass-card p-8 rounded-2xl hover:border-brand-primary transition-colors text-left group">
                     <h3 class="text-2xl font-bold text-white mb-2">Starter</h3>
                     <p class="text-sm text-dark-muted mb-6">For those new to crypto staking.</p>
@@ -510,7 +652,9 @@ include("./server/connection.php");
                         </tr>
                     </thead>
                     <tbody id="market-body" class="divide-y divide-dark-border text-sm">
-                        <tr><td colspan="4" class="p-6 text-center text-dark-muted">Loading data...</td></tr>
+                        <tr>
+                            <td colspan="4" class="p-6 text-center text-dark-muted">Loading data...</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -521,7 +665,7 @@ include("./server/connection.php");
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-12">
                 <div>
-                    <h3 class="text-xl font-bold text-white mb-4"><?php  echo $sitename ?></h3>
+                    <h3 class="text-xl font-bold text-white mb-4"><?php echo $sitename ?></h3>
                     <p class="text-sm text-dark-muted">The future of decentralized finance, investment, and payments.</p>
                 </div>
                 <div>
@@ -542,56 +686,55 @@ include("./server/connection.php");
                 <div>
                     <h4 class="font-bold text-white mb-4">Contact</h4>
                     <ul class="space-y-2 text-sm text-dark-muted">
-                        <li>support@fchain.com</li>
+                        <li><?php echo $siteemail ?></li>
                         <li>+123456789</li>
                     </ul>
                 </div>
             </div>
             <div class="text-center text-xs text-dark-muted pt-8 border-t border-dark-border">
-                &copy; 2026 <?php  echo $sitename ?>. All rights reserved.
+                &copy; 2026 <?php echo $sitename ?>. All rights reserved.
             </div>
         </div>
     </footer>
 
     <script>
-      
         const menuBtn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => {
             menu.classList.toggle('open');
         });
 
-       
+
         function switchTab(tabName) {
             // Hide all
             document.getElementById('tab-send').classList.add('hidden');
             document.getElementById('tab-receive').classList.add('hidden');
             document.getElementById('tab-swap').classList.add('hidden');
-            document.getElementById('tab-receive').classList.remove('flex'); 
-           
+            document.getElementById('tab-receive').classList.remove('flex');
+
             const el = document.getElementById('tab-' + tabName);
             el.classList.remove('hidden');
-            
-            if(tabName === 'receive') el.classList.add('flex');
+
+            if (tabName === 'receive') el.classList.add('flex');
         }
 
-       
+
         async function fetchData() {
             try {
                 const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;order=market_cap_desc&amp;per_page=5&amp;sparkline=false');
                 const data = await res.json();
-                
-                
+
+
                 const ticker = document.getElementById('crypto-ticker');
                 let tickerHtml = '';
                 data.forEach(coin => {
                     const color = coin.price_change_percentage_24h >= 0 ? 'text-green-400' : 'text-red-400';
                     tickerHtml += `<span class="mx-4"><span class="font-bold text-white">${coin.symbol.toUpperCase()}</span> $${coin.current_price} <span class="${color}">${coin.price_change_percentage_24h.toFixed(2)}%</span></span>`;
                 });
-                
+
                 ticker.innerHTML = tickerHtml + tickerHtml;
 
-               
+
                 const table = document.getElementById('market-body');
                 let tableHtml = '';
                 data.forEach(coin => {
@@ -617,4 +760,5 @@ include("./server/connection.php");
         fetchData();
     </script>
 </body>
+
 </html>
