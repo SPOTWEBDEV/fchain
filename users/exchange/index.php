@@ -228,7 +228,7 @@ $cryptoRates = [
 
 
         <!-- Main Content -->
-        <main class="flex-1 p-6 lg:p-10">
+        <main class="flex-1 p-2 sm:p-6 lg:p-10">
 
             <!-- Top Bar -->
             <?php include("../includes/header.php"); ?>
@@ -236,12 +236,12 @@ $cryptoRates = [
 
             <!-- Dashboard Grid -->
             <section id="wallet" class="py-16 relative bg-[#0f172a] border-t border-dark-border">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
 
 
                     <div class="lg:col-span-2">
                         <div class="glass-card rounded-2xl overflow-hidden shadow-card ">
-                            <div class="p-6 border-b border-dark-border flex justify-between items-center bg-dark-panel/50">
+                            <div class="p-2 sm:p-6 border-b border-dark-border flex justify-between items-center bg-dark-panel/50">
                                 <div>
                                     <h3 class="text-xl font-bold text-white">Exchange</h3>
                                     <p class="text-xs text-dark-muted">Multi-Chain Support (ERC20, BEP20, TRC20)</p>
@@ -252,7 +252,7 @@ $cryptoRates = [
                                 </div>
                             </div>
 
-                            <div class="p-6 grid md:grid-cols-2 gap-8">
+                            <div class="p-2 sm:p-6 grid md:grid-cols-2 gap-8">
                                 <div class="flex flex-col justify-center">
                                     <p class="text-dark-muted text-sm mb-1">Total Balance</p>
                                     <h2 class="text-4xl font-display font-bold text-white mb-6">$42,894.52</h2>
@@ -370,7 +370,7 @@ $cryptoRates = [
                                 </div>
                             </div>
                         </div>
-                        <div class="glass-card rounded-2xl p-6 mt-2 border border-dark-border">
+                        <div class="glass-card rounded-2xl p-2 sm:p-6 mt-2 border border-dark-border">
                             <h3 class="font-bold text-white mb-4">Recent Activity</h3>
                             <div class="space-y-4">
                                 <?php foreach ($transactions as $tx): ?>

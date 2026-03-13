@@ -48,40 +48,27 @@ if ($row = $result->fetch_assoc()) {
         </div>
 
         <!-- Avatar Button -->
-        <div @click="open = !open"
-            class="w-10 h-10 bg-yellow-400 text-black font-bold rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition">
-            UT
+        <?php
+        function getInitials($fullname)
+        {
+            $words = explode(' ', trim($fullname)); // split by space
+            if (count($words) === 1) {
+                // Only one name → take first letter
+                return strtoupper(substr($words[0], 0, 1));
+            } else {
+                // Multiple words → take first letters of first two words
+                return strtoupper(substr($words[0], 0, 1) . substr($words[1], 0, 1));
+            }
+        }
+
+        // Usage
+        $initials = getInitials($fullname);
+        ?>
+        <div class="w-10 h-10 bg-yellow-400 text-black font-bold rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition">
+            <?php echo $initials; ?>
         </div>
 
-        <!-- Dropdown -->
-        <div x-show="open"
-            @click.outside="open = false"
-            x-transition
-            class="absolute right-0 top-14 w-56 bg-[#0f172a] border border-gray-800 rounded-xl shadow-xl overflow-hidden z-50">
 
-            <a href="<?php echo $domain  ?>users/dashboard" class="block px-5 py-3 hover:bg-gray-800 transition">
-                📊 Dashboard
-            </a>
-
-            <a href="<?php echo $domain  ?>users/investment" class="block px-5 py-3 hover:bg-gray-800 transition">
-                📈 Investments
-            </a>
-
-            <a href="<?php echo $domain  ?>users/virtual-card" class="block px-5 py-3 hover:bg-gray-800 transition">
-                💳 Virtual Cards
-            </a>
-
-            <a href="<?php echo $domain  ?>users/exchange" class="block px-5 py-3 hover:bg-gray-800 transition">
-                🔁 Assets Exchange
-            </a>
-
-            <div class="border-t border-gray-800"></div>
-
-            <a href="<?php echo $domain  ?>users/logout" class="block px-5 py-3 text-red-400 hover:bg-gray-800 transition">
-                🚪 Logout
-            </a>
-
-        </div>
 
     </div>
 

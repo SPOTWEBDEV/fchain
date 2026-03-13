@@ -129,7 +129,7 @@ if(isset($_POST['submit_kyc'])){
 
 
         <!-- Main Content -->
-        <main class="flex-1 p-6 lg:p-10">
+        <main class="flex-1 p-2 sm:p-6 lg:p-10">
 
             <!-- Top Bar -->
             <?php include("../includes/header.php"); ?>
@@ -187,7 +187,7 @@ if(isset($_POST['submit_kyc'])){
 
                     <!-- Form Card -->
                     <form method="POST"
-                        enctype="multipart/form-data" class="bg-[#0f172a] p-8 rounded-2xl border border-gray-800 shadow-xl space-y-10">
+                        enctype="multipart/form-data" class="bg-[#0f172a] p-4 sm:p-8 rounded-2xl border border-gray-800 shadow-xl space-y-10">
 
                         <!-- Personal Information -->
                         <div>

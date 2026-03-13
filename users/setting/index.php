@@ -128,7 +128,7 @@ if(isset($_POST['change_pin'])){
     <?php include("../includes/sidenav.php"); ?>
 
     <!-- Main Content -->
-    <main class="flex-1 p-6 lg:p-10">
+    <main class="flex-1 p-4 sm:p-6 lg:p-10">
 
         <!-- Top Bar -->
         <?php include("../includes/header.php"); ?>
@@ -147,7 +147,7 @@ if(isset($_POST['change_pin'])){
                 <div class="lg:col-span-2 space-y-8">
 
                     <!-- Profile Information -->
-                    <form method="POST" class="bg-[#0f172a] border border-gray-800 rounded-2xl p-8 shadow-lg space-y-6">
+                    <form method="POST" class="bg-[#0f172a] border border-gray-800 rounded-2xl py-4 sm:py-8 px-3 sm:px-8 shadow-lg space-y-6">
                         <h2 class="text-xl font-semibold border-b border-gray-700 pb-4">Profile Information</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
@@ -172,7 +172,7 @@ if(isset($_POST['change_pin'])){
                     </form>
 
                     <!-- Change Password -->
-                    <form method="POST" class="bg-[#0f172a] border border-gray-800 rounded-2xl p-8 shadow-lg space-y-6">
+                    <form method="POST" class="bg-[#0f172a] border border-gray-800 rounded-2xl py-4 sm:py-8 px-3 sm:px-8 shadow-lg space-y-6">
                         <h2 class="text-xl font-semibold border-b border-gray-700 pb-4">Change Password</h2>
                         <input type="password" name="current_password" placeholder="Current Password" class="w-full bg-[#111827] border border-gray-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-purple-500 focus:outline-none">
                         <input type="password" name="new_password" placeholder="New Password" class="w-full bg-[#111827] border border-gray-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-purple-500 focus:outline-none">
@@ -181,7 +181,7 @@ if(isset($_POST['change_pin'])){
                     </form>
 
                     <!-- Change PIN -->
-                    <form method="POST" class="bg-[#0f172a] border border-gray-800 rounded-2xl p-8 shadow-lg space-y-6">
+                    <form method="POST" class="bg-[#0f172a] border border-gray-800 rounded-2xl py-4 sm:py-8 px-3 sm:px-8 shadow-lg space-y-6">
                         <h2 class="text-xl font-semibold border-b border-gray-700 pb-4">Change Transaction PIN</h2>
                         <input type="password" name="current_pin" placeholder="Current PIN " class="w-full bg-[#111827] border border-gray-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-purple-500 focus:outline-none">
                         <input type="password" name="new_pin" placeholder="New 4-digit PIN" class="w-full bg-[#111827] border border-gray-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-purple-500 focus:outline-none">

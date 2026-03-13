@@ -84,7 +84,7 @@ if (isset($_POST['start_autotrade'])) {
             <!-- Auto Trading Info -->
             <div class="max-w-4xl mx-auto space-y-6">
 
-                <div class="bg-[#0f172a] p-6 rounded-2xl border border-gray-800 shadow-lg">
+                <div class="bg-[#0f172a] p-6 rounded-2xl  border border-gray-800 shadow-lg">
                     <h1 class="text-3xl font-bold mb-4">Auto Trading</h1>
                     <p class="text-gray-400 mb-4">
                         Auto trading allows you to invest your funds automatically according to pre-set strategies.
@@ -98,7 +98,7 @@ if (isset($_POST['start_autotrade'])) {
                     if (mysqli_num_rows($checkQuery) == 0) {
                         // No open/pending trades, show approved message and form
                     ?>
-                        <div class="bg-red-900/30 border border-red-500 p-6 rounded-xl mb-6">
+                        <div class="bg-red-900/30 border flex items-center gap-4 border-red-500 p-6 rounded-xl mb-6">
                             <i class="fa-solid fa-circle-check text-red-400 text-3xl mb-2"></i>
                             <p class="text-red-200">You have no active auto trades. You can start a new auto trade below by entering an amount.</p>
                         </div>

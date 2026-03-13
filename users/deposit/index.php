@@ -77,7 +77,7 @@ $paymentMethodsQuery = mysqli_query($connection, "SELECT * FROM deposit_methods 
                             <input type="number" id="depositAmount" name="amount" placeholder="Enter amount" class="w-full p-3 rounded-xl bg-[#111827] border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500" required>
                         </div>
 
-                        <button type="button" onclick="openMethodModal()" class="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-xl font-semibold">
+                        <button type="button" onclick="openMethodModal()" class="bg-gradient-to-r from-purple-600 to-indigo-600 px-6 py-3 rounded-xl font-semibold">
                             Proceed
                         </button>
                     </form>

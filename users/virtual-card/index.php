@@ -400,7 +400,7 @@ if (isset($_POST['delete_card'])) {
                             <!-- Card -->
                             <div class="flex justify-center mb-10">
 
-                                <div class="w-full max-w-[420px] h-[230px] rounded-2xl p-6 text-white relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-800 shadow-2xl">
+                                <div class="w-full max-w-[420px] h-fit rounded-2xl p-6 text-white relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-800 shadow-2xl">
 
                                     <!-- glow -->
                                     <div class="absolute -top-10 -right-10 w-40 h-40 bg-white opacity-10 rounded-full blur-2xl"></div>
@@ -426,7 +426,7 @@ if (isset($_POST['delete_card'])) {
 
                                     <div class="mt-6">
 
-                                        <p class="font-mono text-2xl tracking-widest mb-4">
+                                        <p class="font-mono  tracking-widest mb-4 text-lg sm:text-2xl">
                                             <?= chunk_split($cardDetail['card_number'], 4, ' ') ?>
                                         </p>
 
@@ -434,7 +434,7 @@ if (isset($_POST['delete_card'])) {
 
                                             <div>
                                                 <p class="text-xs opacity-70 uppercase">Card Holder</p>
-                                                <p class="font-bold tracking-wider"><?= strtoupper($fullname) ?></p>
+                                                <p class="font-bold tracking-wider text-sm sm:text-lg"><?= strtoupper($fullname) ?></p>
                                             </div>
 
                                             <div class="text-right">
@@ -454,12 +454,12 @@ if (isset($_POST['delete_card'])) {
                             <div class="flex flex-wrap justify-center gap-4">
 
                                 <button onclick="openModal('fundModal')"
-                                    class="flex items-center gap-2 bg-green-600 hover:bg-green-700 px-5 py-3 rounded-xl font-semibold shadow-lg">
+                                    class="flex items-center gap-2 bg-green-600 hover:bg-green-700 px-5 py-3 rounded-xl font-semibold shadow-lg text-sm sm:text-lg">
                                     <i class="fa-solid fa-wallet"></i> Fund Card
                                 </button>
 
                                 <button onclick="openModal('withdrawModal')"
-                                    class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-5 py-3 rounded-xl font-semibold shadow-lg">
+                                    class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-5 py-3 rounded-xl font-semibold shadow-lg text-sm sm:text-lg">
                                     <i class="fa-solid fa-money-bill-transfer"></i> Withdraw
                                 </button>
 
@@ -468,7 +468,7 @@ if (isset($_POST['delete_card'])) {
                                     <form method="POST">
                                         <button name="freeze_card"
                                             type="submit"
-                                            class="flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 px-5 py-3 rounded-xl font-semibold shadow-lg">
+                                            class="flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 px-5 py-3 rounded-xl font-semibold shadow-lg text-sm sm:text-lg">
                                             <i class="fa-solid fa-snowflake"></i> Freeze Card
                                         </button>
                                     </form>
@@ -478,7 +478,7 @@ if (isset($_POST['delete_card'])) {
                                     <form method="POST">
                                         <button name="unfreeze_card"
                                             type="submit"
-                                            class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-5 py-3 rounded-xl font-semibold shadow-lg">
+                                            class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-5 py-3 rounded-xl font-semibold shadow-lg text-sm sm:text-lg">
                                             <i class="fa-solid fa-unlock"></i> Unfreeze Card
                                         </button>
                                     </form>
@@ -486,7 +486,7 @@ if (isset($_POST['delete_card'])) {
                                 <?php } ?>
 
                                 <button onclick="openModal('deleteModal')"
-                                    class="flex items-center gap-2 bg-red-600 hover:bg-red-700 px-5 py-3 rounded-xl font-semibold shadow-lg">
+                                    class="flex items-center gap-2 bg-red-600 hover:bg-red-700 px-2 py-3 rounded-xl font-semibold shadow-lg text-sm sm:text-lg">
                                     <i class="fa-solid fa-trash"></i> Delete Card
                                 </button>
 
