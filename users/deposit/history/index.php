@@ -47,7 +47,7 @@ $depositQuery = mysqli_query($connection, "
 
                     <?php if (mysqli_num_rows($depositQuery) > 0) { ?>
                         <!-- Responsive wrapper -->
-                        <div class="overflow-x-auto">
+                        <div class="hidden md:block overflow-x-auto">
                             <table class="w-full min-w-[700px] table-auto text-sm text-white bg-[#111827] rounded-xl border border-gray-700">
                                 <thead class="bg-gray-800 text-gray-300">
                                     <tr>
@@ -102,6 +102,78 @@ $depositQuery = mysqli_query($connection, "
                                     <?php } ?>
                                 </tbody>
                             </table>
+                        </div>
+                        <div class="md:hidden space-y-4 mt-4">
+
+                            <?php
+                            mysqli_data_seek($depositQuery, 0);
+                            $count = 0;
+
+                            while ($dep = mysqli_fetch_assoc($depositQuery)) {
+                                $count++;
+
+                                $status = strtolower($dep['status']);
+                                $statusColor = "bg-gray-500";
+
+                                if ($status == 'pending') $statusColor = "bg-yellow-500";
+                                else if ($status == 'approved') $statusColor = "bg-green-600";
+                                else if ($status == 'rejected' || $status == 'failed') $statusColor = "bg-red-600";
+                            ?>
+
+                                <div class="bg-[#111827] border border-gray-700 rounded-xl p-4 shadow-md">
+
+                                    <div class="flex justify-between items-center mb-3">
+                                        <h3 class="font-semibold text-white">
+                                            Deposit #<?php echo $count ?>
+                                        </h3>
+
+                                        <span class="px-2 py-1 rounded-full text-white text-xs <?php echo $statusColor ?>">
+                                            <?php echo ucfirst($status); ?>
+                                        </span>
+                                    </div>
+
+                                    <p class="text-gray-400 text-sm">
+                                        <strong>Amount:</strong> $<?php echo number_format($dep['amount'], 2); ?>
+                                    </p>
+
+                                    <p class="text-gray-400 text-sm">
+                                        <strong>Method:</strong> <?php echo $dep['method_name']; ?>
+                                    </p>
+
+                                    <p class="text-gray-400 text-sm mt-1">
+                                        <strong>Account Details:</strong>
+                                    </p>
+
+                                    <div class="text-sm font-mono text-gray-200 break-words">
+
+                                        <?php
+                                        $account = json_decode($dep['account_details'], true);
+
+                                        if (isset($account['address'])) {
+
+                                            echo "Wallet Address: " . $account['address'];
+                                        } elseif (isset($account['bank_name']) && isset($account['account_number'])) {
+
+                                            echo "Account Name: " . ($account['account_name'] ?? '-') . "<br>";
+                                            echo "Bank Name: " . ($account['bank_name'] ?? '-') . "<br>";
+                                            echo "Account Number: " . ($account['account_number'] ?? '-');
+                                        } else {
+
+                                            echo $dep['account_details'];
+                                        }
+                                        ?>
+
+                                    </div>
+
+                                    <p class="text-gray-400 text-sm mt-2">
+                                        <strong>Date:</strong>
+                                        <?php echo date("d M Y H:i", strtotime($dep['deposited_at'])); ?>
+                                    </p>
+
+                                </div>
+
+                            <?php } ?>
+
                         </div>
                     <?php } else { ?>
                         <p class="text-gray-400 text-center mt-4">You have no deposit history yet.</p>
