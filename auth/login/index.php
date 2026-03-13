@@ -96,7 +96,6 @@ include('../../server/connection.php');
 
         if (empty($login_id) || empty($user_password)) {
             toast("error", "All fields are required");
-            exit;
         }
 
         // Login using username or account ID or email
@@ -113,7 +112,6 @@ include('../../server/connection.php');
 
         if ($result->num_rows === 0) {
             toast("error", "User not found");
-            exit;
         }
 
         $user = $result->fetch_assoc();
@@ -121,7 +119,6 @@ include('../../server/connection.php');
         // Verify password
         if (!password_verify($user_password, $user['password'])) {
             toast("error", "Incorrect password");
-            exit;
         }
 
         $_SESSION['user_id'] = $user['id'];
