@@ -149,7 +149,7 @@ include("./server/connection.php");
 
                 <div class="flex items-center gap-4">
                     <a href='auth/login'> <button class="hidden md:block bg-transparent hover:text-white text-gray-300 px-5 py-2 text-sm font-medium transition-all">Log In</button></a>
-                    <a href='auth/register.html'> <button class="bg-white hover:bg-gray-200 text-black px-6 py-2.5 rounded-full text-sm font-bold shadow-lg transition-all hover:scale-105">Get Started</button></a>
+                    <a href='auth/register'> <button class="bg-white hover:bg-gray-200 text-black px-6 py-2.5 rounded-full text-sm font-bold shadow-lg transition-all hover:scale-105">Get Started</button></a>
                     <button id="mobile-menu-btn" class="lg:hidden text-gray-300 hover:text-white"><i class="fa-solid fa-bars text-2xl"></i></button>
                 </div>
             </div>
