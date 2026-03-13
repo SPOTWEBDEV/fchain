@@ -37,12 +37,12 @@ $depositQuery = mysqli_query($connection, "
         <?php include("../../includes/sidenav.php"); ?>
 
         <!-- Main Content -->
-        <main class="flex-1 p-6 lg:p-10">
+        <main class="flex-1 p-2 sm:p-6 lg:p-10">
             <?php include("../../includes/header.php"); ?>
 
 
             <div class="max-w-5xl mx-auto mt-6">
-                <div class="bg-[#0f172a] p-6 rounded-2xl border border-gray-800 shadow-lg">
+                <div class="bg-[#0f172a] p-2 sm:p-6 rounded-2xl border border-gray-800 shadow-lg">
                     <h2 class="text-3xl font-bold mb-4">Deposit History</h2>
 
                     <?php if (mysqli_num_rows($depositQuery) > 0) { ?>
@@ -151,7 +151,12 @@ $depositQuery = mysqli_query($connection, "
 
                                         if (isset($account['address'])) {
 
-                                            echo "Wallet Address: " . $account['address'];
+                                            
+                                            $address = $account['address'];
+
+                                            $masked = substr($address, 0, 5) . "..." . substr($address, -4);
+
+                                            echo "Wallet Address: " . $masked;
                                         } elseif (isset($account['bank_name']) && isset($account['account_number'])) {
 
                                             echo "Account Name: " . ($account['account_name'] ?? '-') . "<br>";
