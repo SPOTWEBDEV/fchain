@@ -10,11 +10,13 @@ include("../server/connection.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $sitename ?> - DeFi, Wallet & Investments</title>
+    <title><?php echo $sitename ?> Coin</title>
 
     <script src="https://cdn.tailwindcss.com/"></script>
 
     <link rel="stylesheet" href="<?php echo $domain; ?>assets/vendor/cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="shortcut icon" href="<?php echo $domain; ?>assets/images/coin.png" type="image/x-icon">
 
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 
