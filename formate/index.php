@@ -11,12 +11,26 @@ include("../server/connection.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $sitename ?> Coin</title>
+    <link rel="shortcut icon" href="<?php echo $domain; ?>assets/images/coin.png" >
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="<?php echo $sitename ?> Coin">
+    <meta property="og:description" content="MetaStake Coin powers the MetaStake ecosystem, enabling investments, Web3 trading, AI auto trading, and exclusive platform rewards.">
+    <meta property="og:image" content="<?php echo $domain; ?>assets/images/coin.png">
+    <meta property="og:url" content="<?php echo $domain; ?>assets/images/coin.png">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo $sitename ?> Coin">
+    <meta name="twitter:description" content="MetaStake Coin powers the MetaStake ecosystem, enabling investments, Web3 trading, AI auto trading, and exclusive platform rewards.">
+    <meta name="twitter:image" content="<?php echo $domain; ?>assets/images/coin.png">
 
     <script src="https://cdn.tailwindcss.com/"></script>
 
     <link rel="stylesheet" href="<?php echo $domain; ?>assets/vendor/cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="shortcut icon" href="<?php echo $domain; ?>assets/images/coin.png" type="image/x-icon">
+    
 
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 
